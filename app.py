@@ -59,20 +59,20 @@ def letters_2_words():
             for l in range(2,len(letters)+1):
                 for word in itertools.permutations(letters,l):
                     w = "".join(word)
-                    if pattern and re.match(pattern, w):
+                    if not pattern:
                         if w in good_words:
                             word_set.add(w)
-                    else:
+                    elif re.match(pattern, w):
                         if w in good_words:
                             word_set.add(w)
         else:
             for l in range(length,length+1):
                 for word in itertools.permutations(letters,l):
                     w = "".join(word)
-                    if pattern and re.match(pattern, w):
+                    if not pattern:
                         if w in good_words:
                             word_set.add(w)
-                    else:
+                    elif re.match(pattern, w):
                         if w in good_words:
                             word_set.add(w)
     
