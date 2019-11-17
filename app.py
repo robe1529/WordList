@@ -59,7 +59,7 @@ def letters_2_words():
             for l in range(2,len(letters)+1):
                 for word in itertools.permutations(letters,l):
                     w = "".join(word)
-                    if not pattern and re.match(pattern, w):
+                    if pattern and re.match(pattern, w):
                         if w in good_words:
                             word_set.add(w)
                     else:
@@ -69,7 +69,7 @@ def letters_2_words():
             for l in range(length,length+1):
                 for word in itertools.permutations(letters,l):
                     w = "".join(word)
-                    if not pattern and re.match(pattern, w):
+                    if pattern and re.match(pattern, w):
                         if w in good_words:
                             word_set.add(w)
                     else:
